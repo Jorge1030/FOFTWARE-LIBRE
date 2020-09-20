@@ -1,0 +1,282 @@
+///////Estamos en modo usuario
+martinez@martinez:~$
+///TENEMOS QUE ENTRAR COMO SUPER USUARIO
+
+martinez@martinez:~$ su
+Contraseña:
+root@martinez:/home/martinez#
+
+root@martinez:/home/martinez# su -
+root@martinez:~#
+
+///PROCEDEMOS A CREAR EL GRUPO CASA
+root@martinez:~# groupadd casa
+root@martinez:~#
+
+//////VERIFICAMOS A VER SI SE CREO EL GRUPO CASA
+
+root@martinez:~# cat /etc/group
+root:x:0:
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mail:x:8:
+news:x:9:
+uucp:x:10:
+man:x:12:
+proxy:x:13:
+kmem:x:15:
+dialout:x:20:
+fax:x:21:
+voice:x:22:
+cdrom:x:24:martinez
+floppy:x:25:martinez
+tape:x:26:
+sudo:x:27:
+audio:x:29:pulse,martinez
+dip:x:30:martinez
+www-data:x:33:
+backup:x:34:
+operator:x:37:
+list:x:38:
+irc:x:39:
+src:x:40:
+gnats:x:41:
+shadow:x:42:
+utmp:x:43:
+video:x:44:martinez
+sasl:x:45:
+plugdev:x:46:martinez
+staff:x:50:
+games:x:60:
+users:x:100:
+nogroup:x:65534:
+systemd-journal:x:101:
+systemd-timesync:x:102:
+systemd-network:x:103:
+systemd-resolve:x:104:
+systemd-bus-proxy:x:105:
+input:x:106:
+crontab:x:107:
+netdev:x:108:martinez
+ssl-cert:x:109:
+messagebus:x:110:
+ssh:x:111:
+bluetooth:x:112:martinez
+lpadmin:x:113:martinez
+geoclue:x:114:
+rtkit:x:115:
+pulse:x:116:
+pulse-access:x:117:
+scanner:x:118:saned,martinez
+avahi:x:119:
+colord:x:120:
+saned:x:121:
+Debian-gdm:x:122:
+martinez:x:1000:
+casa:x:1001:
+root@martinez:~#
+//////COMO  PODEMOS VERIFICAR EL GRUPO CASA A SIDO CREADO EXITOSAMENTE.
+
+/////AHORA VAMOS A PROCEDER A CREAR EL USUARIO SONIA EL CUAL ES EL NOMBRE DE MI MAMA Y EL SEGUNDO USUARIO SERA MI PRIMER NOMBRE EL CUAL ES ERNESTO/////////
+root@martinez:~# useradd sonia
+root@martinez:~# useradd ernesto
+root@martinez:~#
+
+//////AHORA VAMOS A VERIFICAR SI LOS USUARIOS SE CREARON CORRECTAMENTE/////
+root@martinez:~# cat /etc/group
+root:x:0:
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mail:x:8:
+news:x:9:
+uucp:x:10:
+man:x:12:
+proxy:x:13:
+kmem:x:15:
+dialout:x:20:
+fax:x:21:
+voice:x:22:
+cdrom:x:24:martinez
+floppy:x:25:martinez
+tape:x:26:
+sudo:x:27:
+audio:x:29:pulse,martinez
+dip:x:30:martinez
+www-data:x:33:
+backup:x:34:
+operator:x:37:
+list:x:38:
+irc:x:39:
+src:x:40:
+gnats:x:41:
+shadow:x:42:
+utmp:x:43:
+video:x:44:martinez
+sasl:x:45:
+plugdev:x:46:martinez
+staff:x:50:
+games:x:60:
+users:x:100:
+nogroup:x:65534:
+systemd-journal:x:101:
+systemd-timesync:x:102:
+systemd-network:x:103:
+systemd-resolve:x:104:
+systemd-bus-proxy:x:105:
+input:x:106:
+crontab:x:107:
+netdev:x:108:martinez
+ssl-cert:x:109:
+messagebus:x:110:
+ssh:x:111:
+bluetooth:x:112:martinez
+lpadmin:x:113:martinez
+geoclue:x:114:
+rtkit:x:115:
+pulse:x:116:
+pulse-access:x:117:
+scanner:x:118:saned,martinez
+avahi:x:119:
+colord:x:120:
+saned:x:121:
+Debian-gdm:x:122:
+martinez:x:1000:
+casa:x:1001:
+root@martinez:~# useradd sonia
+root@martinez:~# useradd ernesto
+root@martinez:~# cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-timesync:x:100:102:systemd Time Synchronization,,,:/run/systemd:/bin/false
+systemd-network:x:101:103:systemd Network Management,,,:/run/systemd/netif:/bin/false
+systemd-resolve:x:102:104:systemd Resolver,,,:/run/systemd/resolve:/bin/false
+systemd-bus-proxy:x:103:105:systemd Bus Proxy,,,:/run/systemd:/bin/false
+_apt:x:104:65534::/nonexistent:/bin/false
+dnsmasq:x:105:65534:dnsmasq,,,:/var/lib/misc:/bin/false
+messagebus:x:106:110::/var/run/dbus:/bin/false
+usbmux:x:107:46:usbmux daemon,,,:/var/lib/usbmux:/bin/false
+geoclue:x:108:114::/var/lib/geoclue:/bin/false
+speech-dispatcher:x:109:29:Speech Dispatcher,,,:/var/run/speech-dispatcher:/bin/false
+rtkit:x:110:115:RealtimeKit,,,:/proc:/bin/false
+pulse:x:111:116:PulseAudio daemon,,,:/var/run/pulse:/bin/false
+avahi:x:112:119:Avahi mDNS daemon,,,:/var/run/avahi-daemon:/bin/false
+colord:x:113:120:colord colour management daemon,,,:/var/lib/colord:/bin/false
+saned:x:114:121::/var/lib/saned:/bin/false
+Debian-gdm:x:115:122:Gnome Display Manager:/var/lib/gdm3:/bin/false
+hplip:x:116:7:HPLIP system user,,,:/var/run/hplip:/bin/false
+martinez:x:1000:1000:martinez,,,:/home/martinez:/bin/bash
+sonia:x:1001:1002::/home/sonia:
+ernesto:x:1002:1003::/home/ernesto:
+root@martinez:~#
+
+//////PODEMOS VERIFICAR LOS QUE LOS USUARIOS FUERON CREADOS EXITOSAMENTE/////
+
+///////AHORA VAMOS AGREGAR EL USUARIO  SONIA AL GRUPO CASA/////////
+root@martinez:~# adduser sonia casa
+Añadiendo al usuario `sonia' al grupo `casa' ...
+Añadiendo al usuario sonia al grupo casa
+Hecho.
+root@martinez:~# adduser ernesto casa
+Añadiendo al usuario `ernesto' al grupo `casa' ...
+Añadiendo al usuario ernesto al grupo casa
+Hecho.
+root@martinez:~#
+///////////////////COMO PODEMOS OBSERVAR LOS USUARIOS HAN SIDO AGREGADOS AL GRUPO CASA//////////////////////
+
+///////////////AHORA VAMOS A CAMBIAR EL NOMBRE DEL GRUPO CASA POR EL NOMBRE FAMILIA//////////////////////////////
+root@martinez:~# cat /etc/group
+root:x:0:
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mail:x:8:
+news:x:9:
+uucp:x:10:
+man:x:12:
+proxy:x:13:
+kmem:x:15:
+dialout:x:20:
+fax:x:21:
+voice:x:22:
+cdrom:x:24:martinez
+floppy:x:25:martinez
+tape:x:26:
+sudo:x:27:
+audio:x:29:pulse,martinez
+dip:x:30:martinez
+www-data:x:33:
+backup:x:34:
+operator:x:37:
+list:x:38:
+irc:x:39:
+src:x:40:
+gnats:x:41:
+shadow:x:42:
+utmp:x:43:
+video:x:44:martinez
+sasl:x:45:
+plugdev:x:46:martinez
+staff:x:50:
+games:x:60:
+users:x:100:
+nogroup:x:65534:
+systemd-journal:x:101:
+systemd-timesync:x:102:
+systemd-network:x:103:
+systemd-resolve:x:104:
+systemd-bus-proxy:x:105:
+input:x:106:
+crontab:x:107:
+netdev:x:108:martinez
+ssl-cert:x:109:
+messagebus:x:110:
+ssh:x:111:
+bluetooth:x:112:martinez
+lpadmin:x:113:martinez
+geoclue:x:114:
+rtkit:x:115:
+pulse:x:116:
+pulse-access:x:117:
+scanner:x:118:saned,martinez
+avahi:x:119:
+colord:x:120:
+saned:x:121:
+Debian-gdm:x:122:
+martinez:x:1000:
+casa:x:1001:sonia,ernesto
+sonia:x:1002:
+ernesto:x:1003:
+root@martinez:~#
+////////////////PODEMOS OBSERVAR QUE LOS CAMBIOS SE EFECTUARON CORRECTAMENTE/////////////////////
+
+
